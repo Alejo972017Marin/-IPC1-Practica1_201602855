@@ -149,7 +149,7 @@ public class IPCPractica1_201602855 {
                     Frut[fila][columna] = 9;
 
                 }
-                
+                 
                 
 
                 for (int i = 0; i < N1; i++) {
