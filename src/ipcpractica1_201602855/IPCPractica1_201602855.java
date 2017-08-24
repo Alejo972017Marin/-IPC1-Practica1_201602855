@@ -12,7 +12,7 @@ public class IPCPractica1_201602855 {
     InputStreamReader in = new InputStreamReader(System.in);
     BufferedReader buffer = new BufferedReader(in);
     String txt = "";
-
+ 
     public void Borde() {
 
         System.out.println("Introdusca su nombre");
