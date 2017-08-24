@@ -67,7 +67,7 @@ public class IPCPractica1_201602855 {
                 b++;
             }
 
-            int Frut[][] = new int[N1-1][N2-1];
+            int Frut[][] = new int[N1][N2];
             
             
             Frut[fila][columna] = 9;
@@ -128,7 +128,7 @@ public class IPCPractica1_201602855 {
                     }
 
                 } else if (Letra.equalsIgnoreCase("w")) {
-                    z--;
+                     z--;
 
                     c = 8;
                     if (Imp[z][k] != 8) {
@@ -142,14 +142,10 @@ public class IPCPractica1_201602855 {
                 }
                 
 
-                if (Imp[z][k]==9) {
-            int fila1 = (int) (Math.random() * (N1));
-            int columna1 = (int) (Math.random() * (N2));
-
-                     Frut[fila1][columna1] = 9;
-
-
-                    
+                if (Frut[z][k]==8) {
+                    while (true) {
+                        Frut[fila][columna] = 9;
+                    }
                 }
 
                 for (int i = 0; i < N1; i++) {
