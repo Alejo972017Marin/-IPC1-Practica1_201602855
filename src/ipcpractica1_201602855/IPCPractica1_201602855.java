@@ -1,4 +1,3 @@
-
 package ipcpractica1_201602855;
 
 import java.io.BufferedReader;
@@ -8,11 +7,14 @@ import java.util.Scanner;
 
 public class IPCPractica1_201602855 {
 
-    
     InputStreamReader in = new InputStreamReader(System.in);
     BufferedReader buffer = new BufferedReader(in);
     String txt = "";
- 
+    int N1, N2, Tam, c;
+    int Imp[][];
+    int Frut[][];
+    int fila, columna;
+
     public void Borde() {
 
         System.out.println("Introdusca su nombre");
@@ -21,16 +23,13 @@ public class IPCPractica1_201602855 {
 
         } catch (IOException e) {
         };
-
         Scanner Dimencion = new Scanner(System.in);
-        int N1, N2, Tam, c;
 
         System.out.println("Ingrece las dimenciones de su tablero");
 
         N1 = Dimencion.nextInt();
         N2 = Dimencion.nextInt();
 
-        int Snake[][] = new int[N1][N2];
         System.out.println("Introdusca el tamaño de su Snake");
         Tam = Dimencion.nextInt();
         Scanner let = new Scanner(System.in);
@@ -49,11 +48,7 @@ public class IPCPractica1_201602855 {
 
             //**********************************************************************************************************
             //**********************************************************************************************************
-            int fila = (int) (Math.random() * (N1));
-            int columna = (int) (Math.random() * (N2));
-
-            int Imp[][] = new int[N1][N2];
-
+            Imp = new int[N1][N2];
             for (int i = 1; i < N1; i++) {
                 for (int j = 1; j < N1; j++) {
 
@@ -66,18 +61,8 @@ public class IPCPractica1_201602855 {
                 Imp[4][b] = 8;
                 b++;
             }
+            this.ActualizarTabla(); //fruto
 
-            int Frut[][] = new int[N1][N2];
-            
-            
-            Frut[fila][columna] = 9;
-
-
-
-            Imp[fila][columna] = Frut[fila][columna];
-
-            
-            
             //****************************************************************************************************************
             int k = b;
             int z = 4;
@@ -88,23 +73,24 @@ public class IPCPractica1_201602855 {
             while (true) {
 
                 Letra = let.nextLine();
-
+ 
                 if (Letra.equalsIgnoreCase("d")) {
                     k++;
-
+                    this.comparar(Imp, z, k);
                     c = 8;
 
                     if (Imp[z][k] != 8) {
                         Imp[z][k - 1] = 0;
                         Imp[z][k] = c;
-                    }
-                    else {
+                    } else {
+                        
                         System.out.println("Game Over");
                         break;
                     }
 
                 } else if (Letra.equalsIgnoreCase("s")) {
                     z++;
+                    this.comparar(Imp, z, k);
                     c = 8;
 
                     if (Imp[z][k] != 8) {
@@ -118,6 +104,7 @@ public class IPCPractica1_201602855 {
 
                 } else if (Letra.equalsIgnoreCase("a")) {
                     k--;
+                    this.comparar(Imp, z, k);
                     c = 8;
                     if (Imp[z][k] != 8) {
                         Imp[z][k + 1] = 0;
@@ -128,8 +115,8 @@ public class IPCPractica1_201602855 {
                     }
 
                 } else if (Letra.equalsIgnoreCase("w")) {
-                     z--;
-
+                    z--;
+                    this.comparar(Imp, z, k);
                     c = 8;
                     if (Imp[z][k] != 8) {
                         Imp[z + 1][k] = 0;
@@ -139,13 +126,6 @@ public class IPCPractica1_201602855 {
                         break;
                     }
 
-                }
-                
-
-                if (Frut[z][k]==8) {
-                    while (true) {
-                        Frut[fila][columna] = 9;
-                    }
                 }
 
                 for (int i = 0; i < N1; i++) {
@@ -168,15 +148,8 @@ public class IPCPractica1_201602855 {
                     System.out.println(" ");
                 }
                 System.out.println(" ");
-                
-                
-
 
             }
-                
-   
-                 
-            
 
             //*******************************************************************************************************************
         }//fin del whilw
@@ -195,7 +168,7 @@ public class IPCPractica1_201602855 {
     }
 
     public static void main(String[] args) {
- 
+
         IPCPractica1_201602855 Bordes = new IPCPractica1_201602855();
         Bordes.Borde();
 
@@ -203,5 +176,19 @@ public class IPCPractica1_201602855 {
         Bit.Bitacora();
 
     }
+
+    public void ActualizarTabla() {
+        fila = (int) (Math.random() * (N1));
+        columna = (int) (Math.random() * (N2));
+        Frut = new int[N1][N2];
+        Frut[fila][columna] = 9;
+        Imp[fila][columna] = Frut[fila][columna];
+    }
     
+    public void comparar(int Imp[][], int z, int k){
+        if(Frut[fila][columna]==Imp[z][k]){
+            this.ActualizarTabla();
+        }
+    }
+
 }
