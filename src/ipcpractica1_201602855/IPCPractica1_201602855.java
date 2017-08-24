@@ -143,7 +143,7 @@ public class IPCPractica1_201602855 {
                 }
                 
                 
-                if (Imp[z][k]==9) {
+                if (Imp[z][k]==Frut[fila][columna]) {
 
 
                     Frut[fila][columna] = 9;
