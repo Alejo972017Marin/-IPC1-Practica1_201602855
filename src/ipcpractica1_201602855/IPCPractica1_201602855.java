@@ -67,19 +67,17 @@ public class IPCPractica1_201602855 {
                 b++;
             }
 
-            int Frut[][] = new int[N1][N2];
+            int Frut[][] = new int[N1-1][N2-1];
+            
+            
+            Frut[fila][columna] = 9;
 
-            for (int i = 1; i < N1; i++) {
-                for (int j = 1; j < N1; j++) {
 
-                    Frut[fila][columna] = 9;
-
-                }
-
-            }
 
             Imp[fila][columna] = Frut[fila][columna];
 
+            
+            
             //****************************************************************************************************************
             int k = b;
             int z = 4;
@@ -99,7 +97,8 @@ public class IPCPractica1_201602855 {
                     if (Imp[z][k] != 8) {
                         Imp[z][k - 1] = 0;
                         Imp[z][k] = c;
-                    } else {
+                    }
+                    else {
                         System.out.println("Game Over");
                         break;
                     }
@@ -142,15 +141,16 @@ public class IPCPractica1_201602855 {
 
                 }
                 
-                
-                if (Imp[z][k]==Frut[fila][columna]) {
+
+                if (Imp[z][k]==9) {
+            int fila1 = (int) (Math.random() * (N1));
+            int columna1 = (int) (Math.random() * (N2));
+
+                     Frut[fila1][columna1] = 9;
 
 
-                    Frut[fila][columna] = 9;
-
+                    
                 }
-                 
-                
 
                 for (int i = 0; i < N1; i++) {
                     for (int j = 0; j < N2; j++) {
@@ -172,9 +172,14 @@ public class IPCPractica1_201602855 {
                     System.out.println(" ");
                 }
                 System.out.println(" ");
+                
+                
+
 
             }
-            
+                
+   
+                 
             
 
             //*******************************************************************************************************************
