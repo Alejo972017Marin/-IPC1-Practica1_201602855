@@ -10,7 +10,7 @@ public class IPCPractica1_201602855 {
     InputStreamReader in = new InputStreamReader(System.in);
     BufferedReader buffer = new BufferedReader(in);
     String txt = "";
-    int N1, N2, Tam, c, cont, punt, tot;
+    int N1, N2, Tam, c, cont, punt, tot,puntfrut;
     int Imp[][];
     int cordenada[][] = new int[100][2];
     int Frut[][];
@@ -44,7 +44,7 @@ public class IPCPractica1_201602855 {
                 Datos();
                 break;
             case 3:
-                Bitacora();
+               
                 break;
             case 4:
                 Fin();
@@ -203,6 +203,17 @@ public class IPCPractica1_201602855 {
                         break;
                     }
                 } else if (Letra.equalsIgnoreCase("e")) {
+                    Fin();
+                    System.out.println("********************************************");
+                    System.out.println("*");
+                    System.out.println("* jugador: "+this.txt+"");
+                    System.out.println("* Punteo Final:"+ this.tot+"");
+                    System.out.println("*");
+                    System.out.println("*");
+                    System.out.println("********************************************");
+                    System.out.println("");
+                    System.out.println("");
+                    System.out.println("");
                     MenuInicio();
 
                 }
@@ -232,6 +243,12 @@ public class IPCPractica1_201602855 {
                     System.out.println(" ");
                 }
                 System.out.println(" ");
+               
+                 System.out.println("_________________________________________________________________________________________");
+
+                                  Bitacora();
+
+                System.out.println("_________________________________________________________________________________________");
 
             }
 
@@ -241,13 +258,12 @@ public class IPCPractica1_201602855 {
     }
 
     public void Bitacora() {
-        System.out.println("______________________________________________________________________________________________");
+ 
 
         System.out.println("                                                BITACORA ");
-
-        System.out.println("");
-
-        System.out.println("");
+            
+        System.out.println("Fruto:"+ "("+fila +","+columna+")" +Math.abs(punt)+"pts");
+        
     }
 
     public static void main(String[] args) {
@@ -263,13 +279,15 @@ public class IPCPractica1_201602855 {
         Frut[fila][columna] = 9;
         Imp[fila][columna] = Frut[fila][columna];
     }
-    
+   // public void Valorfrut(){
+      
+    //}
 
     public void comparar(int Imp[][], int z, int k) {
 
         if (Frut[fila][columna] == Imp[z][k]) {
             for (int p = 0; p < 1; p++) {
-                punt = (z / 2) - (k);
+                punt = (fila / 2) - (columna);
                 tot = Math.abs(tot) + Math.abs(punt);
             }
 
