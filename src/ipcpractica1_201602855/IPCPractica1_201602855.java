@@ -18,21 +18,21 @@ public class IPCPractica1_201602855 {
 
     //*******************************************
     public void MenuInicio() {
-        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-        System.out.println("&&      z     ZZZZZ   ZZZZZZ      Z     ZZZZZZ     ZZZZZZZZ    %%");
-        System.out.println("&&     Z Z    ZZ   Z  Z          Z Z    Z      Z   ZZ          %%");
-        System.out.println("&&    Z   Z   ZZZZZ   Z         Z   Z   Z       Z  ZZZZZ       %%");
-        System.out.println("&&   ZZZZZZZ  ZZ  ZZ  Z        ZZZZZZZ  Z      Z   ZZ          %%");
-        System.out.println("&&  Z       Z ZZ   ZZ ZZZZZZZ Z       Z ZZZZZZ     ZZZZZZZZ    %%");
-        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-        System.out.println("@@     1) iniciar partida                                      @@");
-        System.out.println("@@     2) Jugador                                              @@");
-        System.out.println("@@     3) Historial                                            @@");
-        System.out.println("@@     4) Salir                                                @@");
-        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-        System.out.println("@@     Marque el digito de su eleccion:                        @@");
-        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+        System.out.println("\033[34m%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+        System.out.println("\033[34m&&      Z     ZZZZZ   ZZZZZZ      Z     ZZZZZZ     ZZZZZZZZ    %%");
+        System.out.println("\033[34m&&     Z Z    ZZ   Z  Z          Z Z    Z      Z   ZZ          %%");
+        System.out.println("\033[34m&&    Z   Z   ZZZZZ   Z         Z   Z   Z       Z  ZZZZZ       %%");
+        System.out.println("\033[34m&&   ZZZZZZZ  ZZ  ZZ  Z        ZZZZZZZ  Z      Z   ZZ          %%");
+        System.out.println("\033[34m&&  Z       Z ZZ   ZZ ZZZZZZZ Z       Z ZZZZZZ     ZZZZZZZZ    %%");
+        System.out.println("\033[34m%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+        System.out.println("\033[34m@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+        System.out.println("\033[34m@@     1) iniciar partida                                      @@");
+        System.out.println("\033[34m@@     2) Jugador                                              @@");
+        System.out.println("\033[34m@@     3) Historial                                            @@");
+        System.out.println("\033[34m@@     4) Salir                                                @@");
+        System.out.println("\033[34m@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+        System.out.println("\033[34m@@     Marque el digito de su eleccion:                        @@");
+        System.out.println("\033[34m@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
         Scanner entrada = new Scanner(System.in);
         int menu = 0;
         menu = entrada.nextInt();
@@ -41,20 +41,51 @@ public class IPCPractica1_201602855 {
                 Borde();
                 break;
             case 2:
-
+                Datos();
+                break;
             case 3:
                 Bitacora();
                 break;
             case 4:
                 System.out.println("salir");
+
         }
+
+    }
+
+    public void Gameover() {
+
+        System.out.println("\033[31m%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+        System.out.println("\033[31m&& ZZZZZZZ     Z     ZZ     ZZ ZZZZZZZZ    %%");
+        System.out.println("\033[31m&& Z          Z Z    ZZ Z Z ZZ ZZ          %%");
+        System.out.println("\033[31m&& Z  ZZZZ   Z   Z   ZZ  Z  ZZ ZZZZZ       %%");
+        System.out.println("\033[31m&& Z     Z  ZZZZZZZ  ZZ     ZZ ZZ          %%");
+        System.out.println("\033[31m&& ZZZZZZZ Z       Z ZZ     ZZ ZZZZZZZZ    %%");
+        System.out.println("\033[31m%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+        System.out.println("\033[31m%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+        System.out.println("\033[31m&&   ZZZZZZZ Z       Z ZZZZZZZZ ZZZZZ      %%");
+        System.out.println("\033[31m&&   Z     Z  Z     Z  ZZ       ZZ   Z     %%");
+        System.out.println("\033[31m&&   Z     Z   Z   Z   ZZZZZZ   ZZZZZ      %%");
+        System.out.println("\033[31m&&   Z     Z    Z Z    ZZ       ZZ  ZZ     %%");
+        System.out.println("\033[31m&&   ZZZZZZZ     Z     ZZZZZZZZ ZZ   ZZ    %%");
+        System.out.println("\033[31m%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
 
     }
 
     //*******************************************
     public void Datos() {
 
-        System.out.println("Jugador:" + txt);
+        System.out.println("Jugador:" + this.txt);
+        if (tot > 30) {
+            System.out.println("Punteo=" + this.tot);
+            System.out.println("*******Eres Brillante******");
+        } else if (tot < 30 && tot > 20) {
+            System.out.println("Punteo=" + this.tot);
+            System.out.println("*******buen juego******");
+        } else {
+            System.out.println("Punteo=" + this.tot);
+            System.out.println("******Perdedor******");
+        }
 
     }
 
@@ -116,7 +147,7 @@ public class IPCPractica1_201602855 {
                         Imp[z][k] = c;
                     } else {
 
-                        System.out.println("Game Over");
+                        Gameover();
                         break;
                     }
 
@@ -130,7 +161,7 @@ public class IPCPractica1_201602855 {
                         Imp[z][k] = c;
 
                     } else {
-                        System.out.println("Game over");
+                        Gameover();
                         break;
                     }
 
@@ -142,7 +173,7 @@ public class IPCPractica1_201602855 {
                         Imp[z][k + 1] = 0;
                         Imp[z][k] = c;
                     } else {
-                        System.out.println("Game Over");
+                        Gameover();
                         break;
                     }
 
@@ -154,9 +185,11 @@ public class IPCPractica1_201602855 {
                         Imp[z + 1][k] = 0;
                         Imp[z][k] = c;
                     } else {
-                        System.out.println("Game Over");
+                        Gameover();
                         break;
                     }
+                } else if (Letra.equalsIgnoreCase("e")) {
+                    MenuInicio();
 
                 }
                 System.out.println("_________________________________________________________________________________________");
@@ -189,9 +222,8 @@ public class IPCPractica1_201602855 {
             }
 
             //*******************************************************************************************************************
-        }//fin del while
+        } //fin del while
 
-        //*********
     }
 
     public void Bitacora() {
