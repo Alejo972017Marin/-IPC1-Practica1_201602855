@@ -10,59 +10,55 @@ public class IPCPractica1_201602855 {
     InputStreamReader in = new InputStreamReader(System.in);
     BufferedReader buffer = new BufferedReader(in);
     String txt = "";
-    int N1, N2, Tam, c,cont,punt,tot;
+    int N1, N2, Tam, c, cont, punt, tot;
     int Imp[][];
-    int cordenada[][]=new int[100][2];
+    int cordenada[][] = new int[100][2];
     int Frut[][];
     int fila, columna;
-    
-    //*******************************************
-        public  void MenuInicio(){
-       System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-       System.out.println("&&      z     ZZZZZ   ZZZZZZ      Z     ZZZZZZ     ZZZZZZZZ    %%");
-       System.out.println("&&     Z Z    ZZ   Z  Z          Z Z    Z      Z   ZZ          %%");
-       System.out.println("&&    Z   Z   ZZZZZ   Z         Z   Z   Z       Z  ZZZZZ       %%");
-       System.out.println("&&   ZZZZZZZ  ZZ  ZZ  Z        ZZZZZZZ  Z      Z   ZZ          %%");
-       System.out.println("&&  Z       Z ZZ   ZZ ZZZZZZZ Z       Z ZZZZZZ     ZZZZZZZZ    %%");
-       System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-       System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-       System.out.println("@@     1) iniciar el juego                                     @@");
-       System.out.println("@@     2) Punteos                                              @@");
-       System.out.println("@@     3) Creditos                                             @@");
-       System.out.println("@@     4) Salir                                                @@");
-       System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-       System.out.println("@@     Marque el digito de su eleccion:                        @@");
-       System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-       Scanner entrada = new Scanner(System.in);
-       int menu =0;
-       menu = entrada.nextInt();
-       switch(menu){
-           case 1:
-               Borde();
-               break;
-           case 2:
-               
-           case 3:
-               
-               break;
-           case 4:
-               System.out.println("salir");
-       }
-        
-    }
-    
-    
-    
-    
-    //*******************************************
-    
-    
-    
-    
-    
-    
 
-    public  void Borde() {
+    //*******************************************
+    public void MenuInicio() {
+        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+        System.out.println("&&      z     ZZZZZ   ZZZZZZ      Z     ZZZZZZ     ZZZZZZZZ    %%");
+        System.out.println("&&     Z Z    ZZ   Z  Z          Z Z    Z      Z   ZZ          %%");
+        System.out.println("&&    Z   Z   ZZZZZ   Z         Z   Z   Z       Z  ZZZZZ       %%");
+        System.out.println("&&   ZZZZZZZ  ZZ  ZZ  Z        ZZZZZZZ  Z      Z   ZZ          %%");
+        System.out.println("&&  Z       Z ZZ   ZZ ZZZZZZZ Z       Z ZZZZZZ     ZZZZZZZZ    %%");
+        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+        System.out.println("@@     1) iniciar partida                                      @@");
+        System.out.println("@@     2) Jugador                                              @@");
+        System.out.println("@@     3) Historial                                            @@");
+        System.out.println("@@     4) Salir                                                @@");
+        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+        System.out.println("@@     Marque el digito de su eleccion:                        @@");
+        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+        Scanner entrada = new Scanner(System.in);
+        int menu = 0;
+        menu = entrada.nextInt();
+        switch (menu) {
+            case 1:
+                Borde();
+                break;
+            case 2:
+
+            case 3:
+                Bitacora();
+                break;
+            case 4:
+                System.out.println("salir");
+        }
+
+    }
+
+    //*******************************************
+    public void Datos() {
+
+        System.out.println("Jugador:" + txt);
+
+    }
+
+    public void Borde() {
 
         System.out.println("Introdusca su nombre");
         try {
@@ -85,16 +81,6 @@ public class IPCPractica1_201602855 {
 
         while (true) {
 
-            System.out.println("");
-
-            System.out.println("_________________________________________________________________________________________");
-
-            System.out.println("                                Gamer: " + txt);
-
-            System.out.println("_________________________________________________________________________________________");
-
-            //**********************************************************************************************************
-            //**********************************************************************************************************
             Imp = new int[N1][N2];
             for (int i = 1; i < N1; i++) {
                 for (int j = 1; j < N1; j++) {
@@ -110,7 +96,6 @@ public class IPCPractica1_201602855 {
             }
             this.ActualizarTabla(); //fruto
 
-            //****************************************************************************************************************
             int k = b;
             int z = 4;
             System.out.println("");
@@ -118,11 +103,9 @@ public class IPCPractica1_201602855 {
             System.out.println("");
 
             while (true) {
-                
-              
 
                 Letra = let.nextLine();
- 
+
                 if (Letra.equalsIgnoreCase("d")) {
                     k++;
                     this.comparar(Imp, z, k);
@@ -132,7 +115,7 @@ public class IPCPractica1_201602855 {
                         Imp[z][k - 1] = 0;
                         Imp[z][k] = c;
                     } else {
-                        
+
                         System.out.println("Game Over");
                         break;
                     }
@@ -176,13 +159,15 @@ public class IPCPractica1_201602855 {
                     }
 
                 }
-                System.out.print("Puntuacion:"+Math.abs(this.tot));
-                System.out.println("");
+                System.out.println("_________________________________________________________________________________________");
+
+                System.out.println("Puntuacion:" + this.tot + "              Gamer: " + txt);
+
+                System.out.println("_________________________________________________________________________________________");
+
                 for (int i = 0; i < N1; i++) {
                     for (int j = 0; j < N2; j++) {
 
-                        
-                        
                         if (i == 0 || i == (N1 - 1)) {
                             System.out.print("" + "*" + " ");
 
@@ -223,10 +208,6 @@ public class IPCPractica1_201602855 {
 
         IPCPractica1_201602855 Menu = new IPCPractica1_201602855();
         Menu.MenuInicio();
-
-        IPCPractica1_201602855 Bit = new IPCPractica1_201602855();
-        Bit.Bitacora();
-
     }
 
     public void ActualizarTabla() {
@@ -236,21 +217,15 @@ public class IPCPractica1_201602855 {
         Frut[fila][columna] = 9;
         Imp[fila][columna] = Frut[fila][columna];
     }
-    //agregado
-    //public void punteo(int Imp[][], int z, int k){
-           
-             
-        
-    //}
-    
-    public void comparar(int Imp[][], int z, int k){
-        
-        if(Frut[fila][columna]==Imp[z][k]){
+
+    public void comparar(int Imp[][], int z, int k) {
+
+        if (Frut[fila][columna] == Imp[z][k]) {
             for (int p = 0; p < 1; p++) {
-             punt = (z/2)-(k) ;
-             tot = Math.abs(tot)+ Math.abs(punt);
+                punt = (z / 2) - (k);
+                tot = Math.abs(tot) + Math.abs(punt);
             }
-             
+
             this.ActualizarTabla();
         }
     }
