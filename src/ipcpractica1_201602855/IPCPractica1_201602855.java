@@ -10,7 +10,7 @@ public class IPCPractica1_201602855 {
     InputStreamReader in = new InputStreamReader(System.in);
     BufferedReader buffer = new BufferedReader(in);
     String txt = "";
-    int N1, N2, Tam, c,cont,punt;
+    int N1, N2, Tam, c,cont,punt,tot;
     int Imp[][];
     int cordenada[][]=new int[100][2];
     int Frut[][];
@@ -176,10 +176,13 @@ public class IPCPractica1_201602855 {
                     }
 
                 }
-
+                System.out.print("Puntuacion:"+Math.abs(this.tot));
+                System.out.println("");
                 for (int i = 0; i < N1; i++) {
                     for (int j = 0; j < N2; j++) {
 
+                        
+                        
                         if (i == 0 || i == (N1 - 1)) {
                             System.out.print("" + "*" + " ");
 
@@ -201,7 +204,7 @@ public class IPCPractica1_201602855 {
             }
 
             //*******************************************************************************************************************
-        }//fin del whilw
+        }//fin del while
 
         //*********
     }
@@ -234,10 +237,20 @@ public class IPCPractica1_201602855 {
         Imp[fila][columna] = Frut[fila][columna];
     }
     //agregado
-
+    //public void punteo(int Imp[][], int z, int k){
+           
+             
+        
+    //}
     
     public void comparar(int Imp[][], int z, int k){
+        
         if(Frut[fila][columna]==Imp[z][k]){
+            for (int p = 0; p < 1; p++) {
+             punt = (z/2)-(k) ;
+             tot = Math.abs(tot)+ Math.abs(punt);
+            }
+             
             this.ActualizarTabla();
         }
     }
