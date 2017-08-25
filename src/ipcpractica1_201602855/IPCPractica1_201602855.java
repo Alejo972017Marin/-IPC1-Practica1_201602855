@@ -87,6 +87,17 @@ public class IPCPractica1_201602855 {
     }
     public void Datos() {
 
+        
+        System.out.println("      @           @@ ");
+        System.out.println("     @@@         @@@@  ");
+        System.out.println("     @@@         @@@@           ");
+        System.out.println("     @@@         @@@@         " );
+        System.out.println("     @@@  @@@@@  @@@@@ @@@@   EN LAS VENAS NO CORRE SANGRE          ");
+        System.out.println("     @@@@@@@@@@@@@@@@@@@@@      SOLAMENTE ROCK.               ");
+        System.out.println("     @@@@@@@@@@@@@@@@@@@                    ");
+        System.out.println("      @@@@@@@@@@@@@@           100%         ");
+        System.out.println("       @@@@@@@@@@@@            ROCK       ");
+        
         System.out.println("Jugador:" + this.txt);
         if (tot > 30) {
             System.out.println("Punteo=" + this.tot);
@@ -261,7 +272,7 @@ public class IPCPractica1_201602855 {
  
 
         System.out.println("                                                BITACORA ");
-            
+        
         System.out.println("Fruto:"+ "("+fila +","+columna+")" +Math.abs(punt)+"pts");
         
     }
@@ -279,9 +290,7 @@ public class IPCPractica1_201602855 {
         Frut[fila][columna] = 9;
         Imp[fila][columna] = Frut[fila][columna];
     }
-   // public void Valorfrut(){
-      
-    //}
+
 
     public void comparar(int Imp[][], int z, int k) {
 
