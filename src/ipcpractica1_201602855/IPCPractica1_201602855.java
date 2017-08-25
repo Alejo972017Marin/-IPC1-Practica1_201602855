@@ -47,8 +47,10 @@ public class IPCPractica1_201602855 {
                 Bitacora();
                 break;
             case 4:
-                System.out.println("salir");
-
+                Fin();
+                System.exit(0);
+               
+                
         }
 
     }
@@ -72,7 +74,17 @@ public class IPCPractica1_201602855 {
 
     }
 
-    //*******************************************
+    public void Fin(){
+        
+        System.out.println("\033[34m%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+        System.out.println("\033[34m&& ZZZZZZZ ZZ ZZZ    ZZ    ZZZZZ    ZZZZZZZ ZZ            ZZ ZZ   ZZ ZZZZZZZ ZZZZZZZZ ZZZZZZZZ    %%");
+        System.out.println("\033[34m&& ZZ      ZZ ZZ ZZ  ZZ    ZZ   ZZ  ZZ      ZZ            ZZ ZZ   ZZ ZZ      ZZ       ZZ    ZZ    %%");
+        System.out.println("\033[34m&& ZZZZ    ZZ ZZ  ZZ ZZ    ZZ    ZZ ZZZZ    ZZ            ZZ ZZ   ZZ ZZZZ    ZZ  ZZZZ ZZ    ZZ    %%");
+        System.out.println("\033[34m&& ZZ      ZZ ZZ   ZZZZ    ZZ   ZZ  ZZ      ZZ            ZZ ZZ   ZZ ZZ      ZZ    ZZ ZZ    ZZ    %%");
+        System.out.println("\033[34m&& ZZ      ZZ ZZ    ZZZ    ZZZZZ    ZZZZZZZ ZZZZZZZ   ZZZZZZ ZZZZZZZ ZZZZZZZ ZZZZZZZZ ZZZZZZZZ    %%");
+        System.out.println("\033[34m%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+        
+    }
     public void Datos() {
 
         System.out.println("Jugador:" + this.txt);
@@ -88,6 +100,8 @@ public class IPCPractica1_201602855 {
         }
 
     }
+    
+
 
     public void Borde() {
 
@@ -249,6 +263,7 @@ public class IPCPractica1_201602855 {
         Frut[fila][columna] = 9;
         Imp[fila][columna] = Frut[fila][columna];
     }
+    
 
     public void comparar(int Imp[][], int z, int k) {
 
