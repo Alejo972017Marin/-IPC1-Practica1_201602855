@@ -86,7 +86,7 @@ public class IPCPractica1_201602855 {
         
     }
     public void Datos() {
-
+ 
         
         System.out.println("      @           @@ ");
         System.out.println("     @@@         @@@@  ");
@@ -97,6 +97,9 @@ public class IPCPractica1_201602855 {
         System.out.println("     @@@@@@@@@@@@@@@@@@@                    ");
         System.out.println("      @@@@@@@@@@@@@@           100%         ");
         System.out.println("       @@@@@@@@@@@@            ROCK       ");
+        
+        System.out.println("");
+        System.out.println("");
         
         System.out.println("Jugador:" + this.txt);
         if (tot > 30) {
