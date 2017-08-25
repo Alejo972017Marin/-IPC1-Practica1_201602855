@@ -10,12 +10,59 @@ public class IPCPractica1_201602855 {
     InputStreamReader in = new InputStreamReader(System.in);
     BufferedReader buffer = new BufferedReader(in);
     String txt = "";
-    int N1, N2, Tam, c;
+    int N1, N2, Tam, c,cont,punt;
     int Imp[][];
+    int cordenada[][]=new int[100][2];
     int Frut[][];
     int fila, columna;
+    
+    //*******************************************
+        public  void MenuInicio(){
+       System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+       System.out.println("&&      z     ZZZZZ   ZZZZZZ      Z     ZZZZZZ     ZZZZZZZZ    %%");
+       System.out.println("&&     Z Z    ZZ   Z  Z          Z Z    Z      Z   ZZ          %%");
+       System.out.println("&&    Z   Z   ZZZZZ   Z         Z   Z   Z       Z  ZZZZZ       %%");
+       System.out.println("&&   ZZZZZZZ  ZZ  ZZ  Z        ZZZZZZZ  Z      Z   ZZ          %%");
+       System.out.println("&&  Z       Z ZZ   ZZ ZZZZZZZ Z       Z ZZZZZZ     ZZZZZZZZ    %%");
+       System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+       System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+       System.out.println("@@     1) iniciar el juego                                     @@");
+       System.out.println("@@     2) Punteos                                              @@");
+       System.out.println("@@     3) Creditos                                             @@");
+       System.out.println("@@     4) Salir                                                @@");
+       System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+       System.out.println("@@     Marque el digito de su eleccion:                        @@");
+       System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+       Scanner entrada = new Scanner(System.in);
+       int menu =0;
+       menu = entrada.nextInt();
+       switch(menu){
+           case 1:
+               Borde();
+               break;
+           case 2:
+               
+           case 3:
+               
+               break;
+           case 4:
+               System.out.println("salir");
+       }
+        
+    }
+    
+    
+    
+    
+    //*******************************************
+    
+    
+    
+    
+    
+    
 
-    public void Borde() {
+    public  void Borde() {
 
         System.out.println("Introdusca su nombre");
         try {
@@ -71,6 +118,8 @@ public class IPCPractica1_201602855 {
             System.out.println("");
 
             while (true) {
+                
+              
 
                 Letra = let.nextLine();
  
@@ -169,8 +218,8 @@ public class IPCPractica1_201602855 {
 
     public static void main(String[] args) {
 
-        IPCPractica1_201602855 Bordes = new IPCPractica1_201602855();
-        Bordes.Borde();
+        IPCPractica1_201602855 Menu = new IPCPractica1_201602855();
+        Menu.MenuInicio();
 
         IPCPractica1_201602855 Bit = new IPCPractica1_201602855();
         Bit.Bitacora();
@@ -184,6 +233,8 @@ public class IPCPractica1_201602855 {
         Frut[fila][columna] = 9;
         Imp[fila][columna] = Frut[fila][columna];
     }
+    //agregado
+
     
     public void comparar(int Imp[][], int z, int k){
         if(Frut[fila][columna]==Imp[z][k]){
